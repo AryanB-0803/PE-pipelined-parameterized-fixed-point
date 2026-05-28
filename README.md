@@ -29,3 +29,5 @@ gtkwave pe_3_stage.vcd
 surfer pe_3_stage.vcd
 
 ## Results and Waveforms
+
+![Waveform](pe_output.png)
