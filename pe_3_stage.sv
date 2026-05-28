@@ -24,7 +24,11 @@ localparam int ACC_WIDTH = 2*DATA_WIDTH - FRAC_BITS + $clog2(FILTER_TAPS))
 //accumulation to happen without overflow...with each tap increase, acc
 //increases by 1 bit so adding $clog2(N)
 
-logic signed [2*DATA_WIDTH-1:0]mult_mult_stage,mult_shift_stage;
+logic signed [2*DATA_WIDTH-1:0]mult_mult_stage;
+logic signed [DATA_WIDTH-1:0]mult_shift_stage; //here ive done this so as to preserve
+//the actual width of the shifted mult...this will be properly 16 bits
+//which will get 0 extended when adding with acc_shift_stage and the sign
+//bits of both will be preseved and -ve accumulation will not be harmed
 logic signed [DATA_WIDTH-1:0]x_mult_stage,x_shift_stage;
 logic signed [DATA_WIDTH-1:0]h_mult_stage,h_shift_stage;
 logic signed [ACC_WIDTH-1:0]acc_mult_stage,acc_shift_stage;
@@ -70,4 +74,3 @@ always_ff @(posedge clk or negedge rst) begin
   end
 end
 endmodule
-
