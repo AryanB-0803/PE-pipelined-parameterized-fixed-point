@@ -30,4 +30,4 @@ surfer pe_3_stage.vcd
 
 ## Results and Waveforms
 
-![Waveform](pe_output.png)
+![Waveform](pe_ouput.png)
