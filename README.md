@@ -18,6 +18,7 @@ It is a 3 staged pipelined parameterized Processing Element (PE) with fixed poin
 
 ### Iverilog 
 iverilog -g2012 -o pe.vvp pe_3_stage.sv pe_3_stage_tb.sv
+
 vvp pe.vvp
 
 ### Waveform visualization
